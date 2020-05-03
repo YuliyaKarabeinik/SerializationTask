@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task", "Task\Task.csproj", "{D6C1A125-1AF5-44C4-BEB1-E9F49BB81460}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BooksSerialization", "BooksSerialization", "{D51B54A2-5A06-420C-B48B-E457B18C1C5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksSerialization", "BooksSerialization\BooksSerialization.csproj", "{230CDCD5-EE88-4DF6-A93E-7540D267A647}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6C1A125-1AF5-44C4-BEB1-E9F49BB81460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C1A125-1AF5-44C4-BEB1-E9F49BB81460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C1A125-1AF5-44C4-BEB1-E9F49BB81460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6C1A125-1AF5-44C4-BEB1-E9F49BB81460}.Release|Any CPU.Build.0 = Release|Any CPU
+		{230CDCD5-EE88-4DF6-A93E-7540D267A647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{230CDCD5-EE88-4DF6-A93E-7540D267A647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{230CDCD5-EE88-4DF6-A93E-7540D267A647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{230CDCD5-EE88-4DF6-A93E-7540D267A647}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{230CDCD5-EE88-4DF6-A93E-7540D267A647} = {D51B54A2-5A06-420C-B48B-E457B18C1C5A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12DF2E9D-DDA6-402D-A9BE-DDFBC02DBF00}
+	EndGlobalSection
+EndGlobal
