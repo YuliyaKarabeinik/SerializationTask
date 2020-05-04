@@ -1,46 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task.TestHelpers
 {
-	public abstract class SerializationTester<TData, TSerializer>
-	{
-		protected TSerializer serializer;
-		bool showResult;
+    public class SerializationTester<TData>
+    {
+        private readonly ISerializer<TData> serializer;
+        private readonly bool showResult;
 
-		public SerializationTester(TSerializer serializer, bool showResult = false)
-		{
-			this.serializer = serializer;
-			this.showResult = showResult;
-		}
+        public SerializationTester(ISerializer<TData> serializer, bool showResult = true)
+        {
+            this.serializer = serializer;
+            this.showResult = showResult;
+        }
 
-		public TData SerializeAndDeserialize(TData data)
-		{
-			var stream = new MemoryStream();
+        public TData SerializeAndDeserialize(TData data)
+        {
+            var stream = new MemoryStream();
 
-			Console.WriteLine("Start serialization");
-			Serialization(data, stream);
-			Console.WriteLine("Serialization finished");
+            Console.WriteLine("Start serialization");
+            serializer.Serialize(data, stream);
+            Console.WriteLine("Serialization finished");
 
-			if (showResult)
-			{
-				var r = Console.OutputEncoding.GetString(stream.GetBuffer(), 0, (int)stream.Length);
-				Console.WriteLine(r);
-			}
+            if (showResult)
+            {
+                var r = Console.OutputEncoding.GetString(stream.GetBuffer(), 0, (int)stream.Length);
+                Console.WriteLine(r);
+            }
 
-			stream.Seek(0, SeekOrigin.Begin);
-			Console.WriteLine("Start deserialization");
-			TData result = Deserialization(stream);
-			Console.WriteLine("Deserialization finished");
+            stream.Seek(0, SeekOrigin.Begin);
+            Console.WriteLine("Start deserialization");
+            TData result = serializer.Deserialize(stream);
+            Console.WriteLine("Deserialization finished");
 
-			return result;
-		}
-
-		internal abstract TData Deserialization(MemoryStream stream);
-		internal abstract void Serialization(TData data, MemoryStream stream);
-	}
+            return result;
+        }
+    }
 }
